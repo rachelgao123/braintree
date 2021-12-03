@@ -15,9 +15,8 @@ router.post('/', (req, res, next) => {
   const nonceFromTheClient = req.body.paymentMethodNonce;
   // Create a new transaction for $10
   const newTransaction = gateway.transaction.sale({
-    amount: '10.00',
+    amount: '100.00',
     paymentMethodNonce: nonceFromTheClient,
-    verifyCard: true,
     options: {
       // This option requests the funds from the transaction
       // once it has been authorized successfully
